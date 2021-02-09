@@ -22,11 +22,11 @@ commitez et pushez sur Github votre projet mis à jour avec comme message de com
 Dans la suite du document, l'IDE désigne IntelliJ Utimate Edition.
 
 2. Depuis votre IDE, créez un nouveau projet de type «Spring Initializr » dans votre workspace.
-Assurez vous que le SDK du projet SDK référençe un JDK 1.8 ou supérieur.
+Assurez vous que le SDK du projet SDK référençe un JDK 11 ou supérieur.
 Le nom du projet est « OurBusinessProject ». Complétez les propriétés Maven du projet en spécifiant comme nom d'artifact, nom de group et nom de package «ourbusinessproject».
 Sélectionnez les dépendances suivantes :
 
-    - Core > Validation
+    - I/O > Validation
     - Web > Rest Repositories
     - SQL > JPA
     - SQL > H2
@@ -42,7 +42,7 @@ http://localhost:8080/
     - Initialisez le dépôt Git dans le dossier de votre projet. 
     - Inscrivez-vous sur le devoir Github Classroom avec l'URL fournie par votre formateur et ajoutez localement
     - Ajoutez le projet Github comme *remote* de votre projet local.
-    - Effectuez un *git pull*.
+    - Exécutez la commande :  *git pull origin master*.
 
     > fix #0 projet créé
 
