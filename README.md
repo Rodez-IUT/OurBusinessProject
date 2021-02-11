@@ -40,7 +40,7 @@ http://localhost:8080/
 
 4. Mise en place Git/Github
     - Initialisez le dépôt Git dans le dossier de votre projet. 
-    - Inscrivez-vous sur le devoir Github Classroom avec l'URL fournie par votre formateur et ajoutez localement
+    - Inscrivez-vous sur le devoir Github Classroom avec l'URL fournie par votre formateur.
     - Ajoutez le projet Github comme *remote* de votre projet local.
     - Exécutez la commande :  *git pull origin master*.
 
