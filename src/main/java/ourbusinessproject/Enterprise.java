@@ -1,10 +1,13 @@
 package ourbusinessproject;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Entity
 public class Enterprise {
 
     @NotEmpty
@@ -15,6 +18,9 @@ public class Enterprise {
     private String contactName;
     @NotEmpty @Email
     private String contactEmail;
+    @Id
+    @GeneratedValue
+    private Long id;
 
     public void setName(String name) {
         this.name = name;
@@ -46,5 +52,9 @@ public class Enterprise {
 
     public String getContactEmail() {
         return contactEmail;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
