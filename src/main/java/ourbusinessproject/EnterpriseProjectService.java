@@ -23,7 +23,7 @@ public class EnterpriseProjectService {
         Enterprise enterprise = project.getEnterprise();
         if (enterprise != null) {
             enterprise.addProject(project);
-            entityManager.persist(enterprise);
+            //entityManager.persist(enterprise);
         }
         entityManager.persist(project);
         entityManager.flush();

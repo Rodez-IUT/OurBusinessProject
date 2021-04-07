@@ -2,10 +2,7 @@ package ourbusinessproject;
 
 import org.hibernate.annotations.Cascade;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -18,7 +15,7 @@ public class Project {
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToOne @NotNull
+    @ManyToOne(cascade = CascadeType.PERSIST) @NotNull
     private Enterprise enterprise;
 
     public void setTitle(String title) {
