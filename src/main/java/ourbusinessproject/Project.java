@@ -21,6 +21,14 @@ public class Project {
     @ManyToOne @NotNull
     private Enterprise enterprise;
 
+    public Project() {}
+
+    public Project(String title, String description, Enterprise enterprise) {
+        this.title = title;
+        this.description = description;
+        this.enterprise = enterprise;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
