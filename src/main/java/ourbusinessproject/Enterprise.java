@@ -7,6 +7,7 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -25,6 +26,13 @@ public class Enterprise {
     private Long id;
     @OneToMany(mappedBy = "enterprise")
     private Collection<Project> projects;
+
+    public void addProject(Project project) {
+        if (projects == null) {
+            projects = new ArrayList<>();
+        }
+        projects.add(project);
+    }
 
     public void setName(String name) {
         this.name = name;

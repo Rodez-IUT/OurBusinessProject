@@ -1,5 +1,7 @@
 package ourbusinessproject;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
