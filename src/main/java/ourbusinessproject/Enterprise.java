@@ -3,9 +3,11 @@ package ourbusinessproject;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Collection;
 
 @Entity
 public class Enterprise {
@@ -21,6 +23,8 @@ public class Enterprise {
     @Id
     @GeneratedValue
     private Long id;
+    @OneToMany(mappedBy = "enterprise")
+    private Collection<Project> projects;
 
     public void setName(String name) {
         this.name = name;
@@ -56,5 +60,13 @@ public class Enterprise {
 
     public Long getId() {
         return id;
+    }
+
+    public Collection<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Collection<Project> projects) {
+        this.projects = projects;
     }
 }
