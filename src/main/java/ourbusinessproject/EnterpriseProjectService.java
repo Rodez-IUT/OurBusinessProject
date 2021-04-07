@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class EnterpriseProjectService {
 
     @PersistenceContext
@@ -24,8 +26,8 @@ public class EnterpriseProjectService {
     public void save(Project project) {
         Enterprise enterprise = project.getEnterprise();
         if (enterprise != null) {
+            enterprise = entityManager.merge(enterprise);
             enterprise.addProject(project);
-            entityManager.persist(enterprise);
         }
         entityManager.persist(project);
         entityManager.flush();

@@ -31,6 +31,7 @@ public class Enterprise {
         if (projects == null) {
             projects = new ArrayList<>();
         }
+        project.setEnterprise(this);
         projects.add(project);
     }
 

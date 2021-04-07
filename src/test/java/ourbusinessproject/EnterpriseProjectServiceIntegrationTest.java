@@ -62,7 +62,7 @@ public class EnterpriseProjectServiceIntegrationTest {
         assertThat(project.getEnterprise().getId(), is(notNullValue()));
 
         // expect the enterprise has the project referenced in its collection of projects
-        assertThat(enterprise.getProjects(), hasItem(project));
+        assertThat(project.getEnterprise().getProjects(), hasItem(project));
 
     }
 
@@ -79,7 +79,7 @@ public class EnterpriseProjectServiceIntegrationTest {
         assertThat(project.getId(), is(notNullValue()));
 
         // expect the enterprise has the project referenced in its collection of projects
-        assertThat(enterprise.getProjects(), hasItem(project));
+        assertThat(project.getEnterprise().getProjects(), hasItem(project));
 
     }
 
