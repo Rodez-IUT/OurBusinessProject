@@ -3,7 +3,9 @@ package ourbusinessproject;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Project {
@@ -14,6 +16,8 @@ public class Project {
     @Id
     @GeneratedValue
     private Long id;
+    @ManyToOne @NotNull
+    private Enterprise enterprise;
 
     public void setTitle(String title) {
         this.title = title;
@@ -33,5 +37,13 @@ public class Project {
 
     public Long getId() {
         return id;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
     }
 }
