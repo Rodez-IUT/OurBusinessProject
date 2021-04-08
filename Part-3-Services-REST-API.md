@@ -72,6 +72,7 @@ logging.level.org.hibernate.SQL=DEBUG
 Vous pouvez faire un « clear » de la console à période régulière afin de pouvoir observer plus facilement le Sql lors du rechargement de la page.
 Combien de requêtes sont générées lors de l'affichage de tous les projets ? Des requêtes vous paraissent-elles « inutiles » ? Pouvez vous expliquer leur présence. 
 
-3. Modifiez l'application de telle sorte qu'une seule requête soit exécutée lors de l'accès à l'URL http://localhost:8080/projectsWithEnterprises.
+3. Modifiez l'application de telle sorte qu'une seule requête soit exécutée lors de l'accès à l'URL http://localhost:8080/projectsWithEnterprises.  
+Indication : Étudiez "[JPQL fetch joins](https://openjpa.apache.org/builds/1.2.3/apache-openjpa/docs/jpa_langref.html#jpa_langref_fetch_joins)"
 
 > fix #3.5 optimization SQL
