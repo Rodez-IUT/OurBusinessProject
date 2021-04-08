@@ -10,9 +10,13 @@ public class Partnership {
     private Enterprise enterprise;
     @NotNull
     private Project project;
+    private Long id;
 
     public Partnership(long id) {
+        this.id = id;
     }
+
+    public Partnership() {}
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
@@ -36,5 +40,13 @@ public class Partnership {
 
     public Project getProject() {
         return project;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
