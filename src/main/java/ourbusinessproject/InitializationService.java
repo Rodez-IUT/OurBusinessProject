@@ -19,8 +19,11 @@ public class InitializationService {
         initEnterprise();
         project1E1 = new Project("p1E1","P1E1 desc",enterprise1);
         enterpriseProjectService.save(project1E1);
+        // warning: if not updated, a second "enterprise 1" will be created
+        enterprise1 = project1E1.getEnterprise();
         project1E2 = new Project("p1E2","P1E2 desc",enterprise2);
         enterpriseProjectService.save(project1E2);
+        enterprise2 = project1E2.getEnterprise();
         project2E1 = new Project("p2E1","P2E1 desc",enterprise1);
         enterpriseProjectService.save(project2E1);
     }
