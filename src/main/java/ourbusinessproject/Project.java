@@ -15,7 +15,7 @@ public class Project {
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToOne(cascade = CascadeType.PERSIST) @NotNull
+    @ManyToOne @NotNull
     private Enterprise enterprise;
 
     public Project() {}

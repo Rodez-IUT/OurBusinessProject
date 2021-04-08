@@ -1,5 +1,6 @@
 package ourbusinessproject;
 
+import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -26,8 +27,8 @@ public class EnterpriseProjectService {
     public void save(Project project) {
         Enterprise enterprise = project.getEnterprise();
         if (enterprise != null) {
-            enterprise = entityManager.merge(enterprise);
-            enterprise.addProject(project);
+            Enterprise managedEnterprise = entityManager.merge(enterprise);
+            managedEnterprise.addProject(project);
         }
         entityManager.persist(project);
         entityManager.flush();
@@ -50,5 +51,19 @@ public class EnterpriseProjectService {
         String query = "select p from Project p order by p.title";
         TypedQuery<Project> typedQuery = entityManager.createQuery(query,Project.class);
         return typedQuery.getResultList();
+    }
+
+    public Project findProjectByTitle(String title) {
+        String query = "select p from Project p where p.title = :title";
+        TypedQuery<Project> typedQuery = entityManager.createQuery(query,Project.class);
+        typedQuery.setParameter("title",title);
+        return DataAccessUtils.singleResult(typedQuery.getResultList());
+    }
+
+    public Enterprise findEnterpriseByName(String name) {
+        String query = "select e from Enterprise e where e.name = :name";
+        TypedQuery<Enterprise> typedQuery = entityManager.createQuery(query,Enterprise.class);
+        typedQuery.setParameter("name",name);
+        return DataAccessUtils.singleResult(typedQuery.getResultList());
     }
 }
