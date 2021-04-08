@@ -3,6 +3,8 @@ package ourbusinessproject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class InitializationService {
 
@@ -15,6 +17,7 @@ public class InitializationService {
     private Enterprise enterprise1;
     private Enterprise enterprise2;
 
+    @Transactional
     public void initProjects() {
         initEnterprise();
         project1E1 = new Project("p1E1","P1E1 desc",enterprise1);
