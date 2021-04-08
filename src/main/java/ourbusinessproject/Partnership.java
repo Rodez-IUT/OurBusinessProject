@@ -1,10 +1,14 @@
 package ourbusinessproject;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class Partnership {
-    private Date creationDate;
+    @NotNull
+    private Date creationDate = new Date();
+    @NotNull
     private Enterprise enterprise;
+    @NotNull
     private Project project;
 
     public Partnership(long id) {
