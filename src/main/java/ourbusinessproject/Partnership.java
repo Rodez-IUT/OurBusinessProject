@@ -25,6 +25,11 @@ public class Partnership {
 
     public Partnership() {}
 
+    public Partnership(Project project1E1, Enterprise enterprise2) {
+        this.project = project1E1;
+        this.enterprise = enterprise2;
+    }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }

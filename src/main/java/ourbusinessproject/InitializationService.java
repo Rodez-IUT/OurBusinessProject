@@ -10,12 +10,17 @@ public class InitializationService {
 
     @Autowired
     private EnterpriseProjectService enterpriseProjectService;
+    @Autowired
+    private PartnershipService partnershipService;
 
     private Project project1E1;
     private Project project1E2;
     private Project project2E1;
     private Enterprise enterprise1;
     private Enterprise enterprise2;
+    private Partnership partnershipP1E1WithE2;
+    private Partnership partnershipP1E2WithE1;
+    private Partnership partnershipP2E1WithE2;
 
     @Transactional
     public void initProjects() {
@@ -29,7 +34,8 @@ public class InitializationService {
         enterpriseProjectService.save(project2E1);
     }
 
-    private void initEnterprise() {
+    @Transactional
+    public void initEnterprise() {
         // enterprise 1
         enterprise1 = new Enterprise();
         enterprise1.setName("MyComp1");
@@ -44,6 +50,15 @@ public class InitializationService {
         enterprise2.setContactEmail("comp2@com.com");
         enterprise2.setContactName("comp2 contact name");
         enterpriseProjectService.save(enterprise2);
+    }
+
+    @Transactional
+    public void initPartnerships() {
+        partnershipP1E1WithE2 = new Partnership(project1E1,enterprise2);
+        partnershipService.save(partnershipP1E1WithE2);
+        partnershipP1E2WithE1 = new Partnership(project1E2,enterprise1);
+        partnershipService.save(partnershipP1E2WithE1);
+        partnershipP2E1WithE2 = new Partnership(project2E1, enterprise2);
     }
 
     public Project getProject1E1() {
@@ -84,5 +99,30 @@ public class InitializationService {
 
     public void setEnterprise2(Enterprise enterprise2) {
         this.enterprise2 = enterprise2;
+    }
+
+
+    public Partnership getPartnershipP1E1WithE2() {
+        return partnershipP1E1WithE2;
+    }
+
+    public void setPartnershipP1E1WithE2(Partnership partnershipP1E1WithE2) {
+        this.partnershipP1E1WithE2 = partnershipP1E1WithE2;
+    }
+
+    public Partnership getPartnershipP1E2WithE1() {
+        return partnershipP1E2WithE1;
+    }
+
+    public void setPartnershipP1E2WithE1(Partnership partnershipP1E2WithE1) {
+        this.partnershipP1E2WithE1 = partnershipP1E2WithE1;
+    }
+
+    public Partnership getPartnershipP2E1WithE2() {
+        return partnershipP2E1WithE2;
+    }
+
+    public void setPartnershipP2E1WithE2(Partnership partnershipP2E1WithE2) {
+        this.partnershipP2E1WithE2 = partnershipP2E1WithE2;
     }
 }
