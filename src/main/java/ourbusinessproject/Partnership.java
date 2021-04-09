@@ -1,15 +1,22 @@
 package ourbusinessproject;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
 public class Partnership {
     @NotNull
     private Date creationDate = new Date();
-    @NotNull
+    @NotNull @ManyToOne
     private Enterprise enterprise;
-    @NotNull
+    @NotNull @ManyToOne
     private Project project;
+    @Id
+    @GeneratedValue
     private Long id;
 
     public Partnership(long id) {
@@ -49,4 +56,6 @@ public class Partnership {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 }
