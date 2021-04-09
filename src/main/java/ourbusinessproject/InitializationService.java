@@ -25,7 +25,6 @@ public class InitializationService {
         project1E2 = new Project("p1E2","P1E2 desc",enterprise2);
         enterpriseProjectService.save(project1E2);
         project2E1 = new Project("p2E1","P2E1 desc",enterprise1);
-        //project2E1 = new Project("","P2E1 desc",enterprise1);
         enterpriseProjectService.save(project2E1);
     }
 
@@ -36,12 +35,14 @@ public class InitializationService {
         enterprise1.setDescription("My comp1 description");
         enterprise1.setContactEmail("comp1@com.com");
         enterprise1.setContactName("comp1 contact name");
+        enterpriseProjectService.save(enterprise1);
         // enterprise 2
         enterprise2 = new Enterprise();
         enterprise2.setName("MyComp2");
         enterprise2.setDescription("My comp2 description");
         enterprise2.setContactEmail("comp2@com.com");
         enterprise2.setContactName("comp2 contact name");
+        enterpriseProjectService.save(enterprise2);
     }
 
     public Project getProject1E1() {
