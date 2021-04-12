@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.transaction.Transactional;
 
 
 @Component
@@ -16,6 +17,7 @@ public class Bootstrap {
     }
 
     @PostConstruct
+    @Transactional
     public void init() {
         try {
             initializationService.initProjects();
