@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 public class Partnership {
     @NotNull
-    private Date creationDate = new Date();
+    private Date creationDate;
     @NotNull @ManyToOne
     private Enterprise enterprise;
     @NotNull @ManyToOne

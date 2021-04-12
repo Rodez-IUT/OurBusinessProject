@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.Date;
 
 @Service
 @Transactional
@@ -15,6 +16,7 @@ public class PartnershipService {
     private EntityManager entityManager;
 
     public Partnership save(Partnership partnership) {
+        partnership.setCreationDate(new Date());
         entityManager.persist(partnership);
         return partnership;
     }
