@@ -88,5 +88,8 @@ Enfin le web service doit supporter la spécification de l'ordre de tri des rés
 
 Concevez et mettez en œuvre la solution qui vous semble la plus optimale.
 
+Indication : explorez l'API Spring [Repository](https://spring.io/guides/gs/accessing-data-jpa/) et l'utilisation d'une [QueryByExample](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example). 
+Un exemple de mise en œuvre est indiquée ici : https://www.baeldung.com/spring-data-query-by-example.
+
 > fix #4.6 search engine
 
