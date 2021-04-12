@@ -56,9 +56,7 @@ public class PartnershipServiceIntegrationTest {
     @Test
     public void testSavePartnership() {
         // given a partnership
-        Partnership partnership = new Partnership();
-        partnership.setEnterprise(partnerEnterprise);
-        partnership.setProject(project);
+        Partnership partnership = new Partnership(project,partnerEnterprise);
 
         // when saving the partnership
         Partnership resPartnership = partnershipService.save(partnership);
@@ -82,9 +80,7 @@ public class PartnershipServiceIntegrationTest {
     @Test
     public void testRemovePartnership() {
         // given a saved partnership
-        Partnership partnership = new Partnership();
-        partnership.setEnterprise(partnerEnterprise);
-        partnership.setProject(project);
+        Partnership partnership = new Partnership(project,partnerEnterprise);
         partnershipService.save(partnership);
 
         // when removing the partnership
