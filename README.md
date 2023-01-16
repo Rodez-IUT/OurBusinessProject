@@ -46,5 +46,5 @@ http://localhost:8080/
     - Ajoutez le projet Github comme *remote* de votre projet local.
     - Exécutez la commande :  *git pull origin master*.
 
-    > fix #0 projet créé
+> fix #0 projet créé
 
